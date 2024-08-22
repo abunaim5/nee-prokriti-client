@@ -28,7 +28,7 @@ const Navbar = () => {
                     <Input type='search' name='search' size="large" className="w-full lg:w-[70%] rounded-[4px]" placeholder="Search for products" suffix={<IoIosSearch />} />
                 </div>
                 <div className="logo flex-1 text-4xl font-extrabold text-center">
-                    Nee
+                    Neej
                 </div>
                 <div className="flex items-center justify-end gap-4 text-2xl flex-1">
                     <FiUser className="hover:text-[#00BADB] cursor-pointer" />
