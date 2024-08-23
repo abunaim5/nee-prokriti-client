@@ -1,0 +1,137 @@
+[
+    {
+      "name": "Classic Blue Jeans",
+      "image": "https://i.postimg.cc/PqnjVfMP/1.png",
+      "description": "Comfortable and stylish classic blue jeans.",
+      "category": "pants",
+      "price": 999,
+      "createdAt": "2024-08-15T10:30:00Z",
+      "availability": true
+    },
+    {
+      "name": "Red Summer Dress",
+      "image": "https://i.postimg.cc/R01zkrPG/2.png",
+      "description": "Elegant red summer dress perfect for any occasion.",
+      "category": "dresses",
+      "price": 1500,
+      "createdAt": "2024-07-20T14:45:00Z",
+      "availability": true
+    },
+    {
+      "name": "Baseball Cap",
+      "image": "https://i.postimg.cc/SsDbK6bM/3.png",
+      "description": "Casual baseball cap with adjustable strap.",
+      "category": "caps",
+      "price": 550,
+      "createdAt": "2024-06-25T09:00:00Z",
+      "availability": false
+    },
+    {
+      "name": "Leather Handbag",
+      "image": "https://i.postimg.cc/tTXHyrwb/4.png",
+      "description": "High-quality leather handbag with ample storage.",
+      "category": "handbags",
+      "price": 1200,
+      "createdAt": "2024-08-05T11:20:00Z",
+      "availability": true
+    },
+    {
+      "name": "Running Shoes",
+      "image": "https://i.postimg.cc/v8hZ1ntX/5.png",
+      "description": "Lightweight running shoes with excellent grip.",
+      "category": "shoes",
+      "price": 1550,
+      "createdAt": "2024-07-30T13:15:00Z",
+      "availability": true
+    },
+    {
+      "name": "Aviator Sunglasses",
+      "image": "https://i.postimg.cc/k4FXvR3J/6.png",
+      "description": "Classic aviator sunglasses with UV protection.",
+      "category": "glasses",
+      "price": 890,
+      "createdAt": "2024-08-12T16:00:00Z",
+      "availability": false
+    },
+    {
+      "name": "Denim Jacket",
+      "image": "https://i.postimg.cc/m26ZjGqH/7.png",
+      "description": "Trendy denim jacket with buttoned front.",
+      "category": "jackets",
+      "price": 2500,
+      "createdAt": "2024-05-18T08:45:00Z",
+      "availability": true
+    },
+    {
+      "name": "Gold Necklace",
+      "image": "https://i.postimg.cc/cCx1910Q/8.png",
+      "description": "Elegant gold necklace with a minimalist design.",
+      "category": "jewelry",
+      "price": 21000,
+      "createdAt": "2024-07-01T12:00:00Z",
+      "availability": true
+    },
+    {
+      "name": "Graphic T-Shirt",
+      "image": "https://i.postimg.cc/dVbsMjJQ/9.png",
+      "description": "Comfortable t-shirt with a stylish graphic print.",
+      "category": "t-shirt",
+      "price": 650,
+      "createdAt": "2024-06-22T10:15:00Z",
+      "availability": true
+    },
+    {
+      "name": "Chinos",
+      "image": "https://i.postimg.cc/mkgR3dyj/10.png",
+      "description": "Smart-casual chinos perfect for any occasion.",
+      "category": "pants",
+      "price": 990,
+      "createdAt": "2024-08-10T11:30:00Z",
+      "availability": true
+    },
+    {
+      "name": "Floral Maxi Dress",
+      "image": "https://i.postimg.cc/Px4TwGYN/11.png",
+      "description": "Beautiful floral maxi dress with a flowing skirt.",
+      "category": "dresses",
+      "price": 1990,
+      "createdAt": "2024-07-28T15:30:00Z",
+      "availability": false
+    },
+    {
+      "name": "Snapback Hat",
+      "image": "https://i.postimg.cc/SKcymYK6/12.png",
+      "description": "Stylish snapback hat with embroidered logo.",
+      "category": "caps",
+      "price": 790,
+      "createdAt": "2024-06-15T13:00:00Z",
+      "availability": true
+    },
+    {
+      "name": "Designer Clutch",
+      "image": "https://i.postimg.cc/NGdQGcQz/13.png",
+      "description": "Elegant designer clutch with a sleek design.",
+      "category": "handbags",
+      "price": 1400,
+      "createdAt": "2024-08-02T09:45:00Z",
+      "availability": true
+    },
+    {
+      "name": "Casual Sneakers",
+      "image": "https://i.postimg.cc/SxM4GYCB/14.png",
+      "description": "Comfortable casual sneakers for everyday wear.",
+      "category": "shoes",
+      "price": 1390,
+      "createdAt": "2024-07-19T14:30:00Z",
+      "availability": true
+    },
+    {
+      "name": "Round Frame Glasses",
+      "image": "https://i.postimg.cc/vHjM9tg7/15.png",
+      "description": "Vintage round frame glasses with a modern twist.",
+      "category": "glasses",
+      "price": 950,
+      "createdAt": "2024-08-11T12:45:00Z",
+      "availability": true
+    }
+  ]
