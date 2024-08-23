@@ -9,6 +9,14 @@ import diamond from '../../../assets/icons/diamond-ring.png'
 import tshirt from '../../../assets/icons/tshirt.png'
 import glasses from '../../../assets/icons/glasses.png'
 import { Link } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+// import required modules
+import { Pagination } from 'swiper/modules';
 
 const routes = [
     {
@@ -60,20 +68,55 @@ const routes = [
 
 const CategoryRoutes = () => {
     return (
-        <div className='flex items-center justify-between gap-2 px-20 py-24'>
-            {
-                routes.map((route, idx) => <Link key={idx} to={route.path}>
-                    <div className='text-base text-center hover:text-[#00BADB]'>
-                        <Image
-                            className='object-contain'
-                            preview={false}
-                            width={80}
-                            src={route.img}
-                        />
-                        <h3 className='mt-2'>{route.name}</h3>
-                    </div>
-                </Link>)
-            }
+        <div className='py-20'>
+            <Swiper
+                height={50}
+                slidesPerView={1}
+                spaceBetween={10}
+                style={{
+                    paddingBottom: 45,
+                    '--swiper-pagination-color': '#00BADB'
+                }}
+                pagination={{
+                    clickable: true,
+                }}
+                breakpoints={{
+                    320: {
+                        slidesPerView: 3,
+                        spaceBetween: 20,
+                    },
+                    768: {
+                        slidesPerView: 4,
+                        spaceBetween: 40,
+                    },
+                    1024: {
+                        slidesPerView: 5,
+                        spaceBetween: 50,
+                    },
+                    1080: {
+                        slidesPerView: 9,
+                        spaceBetween: 50,
+                    },
+                }}
+                modules={[Pagination]}
+                className="mySwiper"
+            >
+                {
+                    routes.map((route, idx) => <SwiperSlide key={idx}>
+                        <Link to={route.path}>
+                            <div className='font-medium text-center hover:text-[#00BADB]'>
+                                <Image
+                                    className='object-contain'
+                                    preview={false}
+                                    width={80}
+                                    src={route.img}
+                                />
+                                <h3 className='mt-2'>{route.name}</h3>
+                            </div>
+                        </Link>
+                    </SwiperSlide>)
+                }
+            </Swiper>
         </div>
     );
 };

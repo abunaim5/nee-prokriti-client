@@ -12,7 +12,7 @@ const ProductCard = ({ product }) => {
             }}
             cover={<Image preview={false} alt="example" className='border-[1px]' style={{ borderRadius: 0 }} src={image} />}
         >
-            <div className='flex items-center justify-between border-[1px] p-4 mt-5'>
+            <div className='flex items-center justify-between border-[1px] p-3 mt-4'>
                 <div>
                     <h1 className='text-lg hover:text-[#00BADB] cursor-pointer'>{name}</h1>
                     <h3 className='text-base'>&#2547;{price}</h3>
