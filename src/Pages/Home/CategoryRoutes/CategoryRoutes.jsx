@@ -60,11 +60,12 @@ const routes = [
 
 const CategoryRoutes = () => {
     return (
-        <div className='flex items-center justify-center gap-20 py-20'>
+        <div className='flex items-center justify-between gap-2 px-20 py-24'>
             {
                 routes.map((route, idx) => <Link key={idx} to={route.path}>
                     <div className='text-base text-center hover:text-[#00BADB]'>
                         <Image
+                            className='object-contain'
                             preview={false}
                             width={80}
                             src={route.img}
