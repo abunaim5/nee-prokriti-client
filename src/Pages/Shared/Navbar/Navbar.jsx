@@ -23,21 +23,21 @@ const navLinks = <>
 
 const Navbar = () => {
     return (
-        <Header className="bg-transparent h-fit my-6 px-4 lg:px-6">
+        <Header className="bg-transparent h-fit mt-8 px-4 lg:px-14">
             <div className="flex items-center">
                 <div className='flex-1'>
                     <HiOutlineMenuAlt1 className='block lg:hidden text-3xl' />
                     <Input type='search' name='search' size="large" className="hidden lg:flex w-full lg:w-[70%] rounded-[4px]" placeholder="Search for products" suffix={<IoIosSearch />} />
                 </div>
                 <div className="logo flex-1 text-4xl font-extrabold text-center">
-                    neeprokriti
+                    Neeprokriti
                 </div>
                 <div className="flex items-center justify-end gap-4 text-2xl flex-1">
-                    <FiUser className="hover:text-[#00BADB] cursor-pointer" />
-                    <Badge size="small" className="text-2xl hover:text-[#00BADB] cursor-pointer" count={1}>
+                    <FiUser className="hidden md:block hover:text-[#00BADB] cursor-pointer" />
+                    <Badge size="small" className="hidden md:block text-2xl hover:text-[#00BADB] cursor-pointer" count={1}>
                         <IoMdHeartEmpty />
                     </Badge>
-                    <Badge size="small" className="text-2xl hover:text-[#00BADB] cursor-pointer" count={1}>
+                    <Badge size="small" className="text-2xl hover:text-[#00BADB] cursor-pointer" count={7}>
                         <FiShoppingCart />
                     </Badge>
                 </div>
