@@ -1,9 +1,9 @@
-import { Input } from "antd";
 import { FiShoppingCart, FiUser } from "react-icons/fi";
-import { IoIosSearch, IoMdHeartEmpty } from "react-icons/io";
+import { IoMdHeartEmpty } from "react-icons/io";
 import { Layout, Badge } from "antd";
 import { Link } from "react-router-dom";
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
+import { IoSearchOutline } from "react-icons/io5";
 
 const { Header } = Layout;
 
@@ -23,16 +23,21 @@ const navLinks = <>
 
 const Navbar = () => {
     return (
-        <Header className="bg-transparent h-fit mt-8 px-4 lg:px-14">
+        <Header className="bg-transparent h-fit py-8 px-4 lg:px-14">
             <div className="flex items-center">
-                <div className='flex-1'>
+                <div className='flex items-center gap-2 flex-1'>
                     <HiOutlineMenuAlt1 className='block lg:hidden text-3xl' />
-                    <Input type='search' name='search' size="large" className="hidden lg:flex w-full lg:w-[70%] rounded-[4px]" placeholder="Search for products" suffix={<IoIosSearch />} />
+                    <div className="logo flex-1 text-4xl font-extrabold">
+                        neeprokriti
+                    </div>
                 </div>
-                <div className="logo flex-1 text-4xl font-extrabold text-center">
-                    Neeprokriti
+                <div className='hidden lg:block'>
+                    <ul className='flex items-center justify-center gap-10 text-lg'>
+                        {navLinks}
+                    </ul>
                 </div>
                 <div className="flex items-center justify-end gap-4 text-2xl flex-1">
+                    <IoSearchOutline className="hidden md:block hover:text-[#00BADB] cursor-pointer" />
                     <FiUser className="hidden md:block hover:text-[#00BADB] cursor-pointer" />
                     <Badge size="small" className="hidden md:block text-2xl hover:text-[#00BADB] cursor-pointer" count={1}>
                         <IoMdHeartEmpty />
@@ -41,11 +46,6 @@ const Navbar = () => {
                         <FiShoppingCart />
                     </Badge>
                 </div>
-            </div>
-            <div className='hidden lg:block pt-12 pb-6'>
-                <ul className='flex items-center justify-center gap-10 text-lg'>
-                    {navLinks}
-                </ul>
             </div>
         </Header>
     );

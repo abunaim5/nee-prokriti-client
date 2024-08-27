@@ -6,7 +6,7 @@ import Offers from "../Offers/Offers";
 const Home = () => {
     return (
         <div>
-            <Offers />
+            {/* <Offers /> */}
             <Banner />
             <CategoryRoutes />
             <NewProducts />
