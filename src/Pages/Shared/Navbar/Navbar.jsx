@@ -37,7 +37,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="flex items-center justify-end gap-4 text-2xl flex-1">
-                    <IoSearchOutline className="hidden md:block hover:text-[#00BADB] cursor-pointer" />
+                    <IoSearchOutline className="hover:text-[#00BADB] cursor-pointer" />
                     <FiUser className="hidden md:block hover:text-[#00BADB] cursor-pointer" />
                     <Badge size="small" className="hidden md:block text-2xl hover:text-[#00BADB] cursor-pointer" count={1}>
                         <IoMdHeartEmpty />
