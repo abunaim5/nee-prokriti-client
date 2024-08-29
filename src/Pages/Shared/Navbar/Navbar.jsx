@@ -23,7 +23,7 @@ const navLinks = <>
 
 const Navbar = () => {
     return (
-        <Header className="bg-transparent h-fit py-8 px-4 lg:px-8 xl:px-16">
+        <Header className="bg-transparent h-fit py-6 px-4 lg:px-8 xl:px-16">
             <div className="flex items-center">
                 <div className='flex items-center gap-2 flex-1'>
                     <HiOutlineMenuAlt1 className='block lg:hidden text-3xl' />
