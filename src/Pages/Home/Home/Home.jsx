@@ -1,16 +1,15 @@
 import Banner from "../Banner/Banner";
-import CategoryRoutes from "../CategoryRoutes/CategoryRoutes";
 import Collections from "../Collections/Collections";
 import NewProducts from "../NewProducts/NewProducts";
+import SupportInfo from "../SupportInfo/SupportInfo";
 
 const Home = () => {
     return (
         <div>
-            {/* <Offers /> */}
             <Banner />
             <Collections />
-            {/* <CategoryRoutes /> */}
             <NewProducts />
+            <SupportInfo />
         </div>
     );
 };

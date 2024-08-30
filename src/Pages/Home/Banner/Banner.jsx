@@ -1,4 +1,3 @@
-import { useRef } from 'react'
 import banner1 from '../../../assets/banner2.png'
 import banner2 from '../../../assets/banner3.png'
 import { Button } from 'antd';
@@ -28,8 +27,6 @@ const banners = [
 
 
 const Banner = () => {
-    const paginationRef = useRef(null)
-
     const _plugins = [
         new AutoPlay({ duration: 4000 }),
         new Arrow(),
