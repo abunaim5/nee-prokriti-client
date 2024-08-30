@@ -27,8 +27,8 @@ const Navbar = () => {
             <div className="flex items-center">
                 <div className='flex items-center gap-2 flex-1'>
                     <HiOutlineMenuAlt1 className='block lg:hidden text-3xl' />
-                    <div className="logo flex-1 text-4xl font-extrabold">
-                        neeprokriti
+                    <div className="logo flex-1 text-2xl md:text-4xl font-extrabold">
+                        NEEPROKRITI
                     </div>
                 </div>
                 <div className='hidden lg:block'>
