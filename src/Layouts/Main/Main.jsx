@@ -17,7 +17,7 @@ const Main = () => {
             <FloatButton.BackTop
                 shape='square'
                 icon={<RiArrowUpSLine />}
-                className='rounded-none shadow-md'
+                className='shadow-lg'
             />
         </Layout>
     );

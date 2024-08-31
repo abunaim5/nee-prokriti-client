@@ -12,7 +12,7 @@ const navLinks = <>
     <Badge size="small" color='#00BADB' className="text-lg hover:text-[#00BADB] cursor-pointer" count={'New'}>
         <li><Link>Shop</Link></li>
     </Badge>
-    <li className='hover:text-[#00BADB]'><Link>Products</Link></li>
+    <li className='hover:text-[#00BADB]'><Link to='/products'>Products</Link></li>
     <Badge size="small" color='#FFA800' className="text-lg hover:text-[#00BADB] cursor-pointer" count={'Sale'}>
         <li><Link>Sale</Link></li>
     </Badge>
