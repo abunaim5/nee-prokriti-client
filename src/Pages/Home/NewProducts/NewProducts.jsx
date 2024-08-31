@@ -12,7 +12,7 @@ const NewProducts = () => {
     }, []);
 
     return (
-        <div className='mb-10 px-4 lg:px-8 xl:px-16 mt-16'>
+        <div className='mb-10 px-4 xl:px-16 mt-16'>
             <SectionTitle
                 title='New Arrivals'
                 description='Here’s some of our most popular products people are in love with.'
