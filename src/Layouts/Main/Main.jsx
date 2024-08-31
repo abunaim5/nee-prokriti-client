@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import Navbar from "../../Pages/Shared/Navbar/Navbar";
 import { Layout, FloatButton } from "antd";
 import { RiArrowUpSLine } from "react-icons/ri";
+import Footer from "../../Pages/Shared/Footer/Footer";
 
 const { Content } = Layout;
 
@@ -12,9 +13,11 @@ const Main = () => {
             <Content>
                 <Outlet />
             </Content>
+            <Footer />
             <FloatButton.BackTop
+                shape='square'
                 icon={<RiArrowUpSLine />}
-                className='rounded-none w-14 h-14 shadow-md'
+                className='rounded-none shadow-md'
             />
         </Layout>
     );
