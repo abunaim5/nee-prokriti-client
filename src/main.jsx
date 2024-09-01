@@ -13,6 +13,7 @@ createRoot(document.getElementById('root')).render(
       components: {
         FloatButton: {
           borderRadiusLG: 0,
+          controlHeightLG: 50
           
         },
         Breadcrumb: {
@@ -20,6 +21,9 @@ createRoot(document.getElementById('root')).render(
           linkHoverColor: '#F6F6F8',
           separatorColor: '#FFFFFF',
           colorBgTextHover: 'none'
+        },
+        Pagination: {
+          // borderRadius: 0,
         }
       }
     }}>
