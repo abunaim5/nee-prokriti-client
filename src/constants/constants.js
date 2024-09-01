@@ -94,7 +94,7 @@ const footContents = [
         ],
     },
     {
-        name: 'Find Us',
+        name: 'Follow Us',
         cls: 'flex-row',
         description: 'Feel free to connect with us on social media for latest updates.',
         routes: [

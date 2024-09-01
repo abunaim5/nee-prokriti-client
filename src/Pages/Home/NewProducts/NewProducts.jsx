@@ -1,6 +1,7 @@
 import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
 import { useEffect, useState } from "react";
 import ProductCard from "../../../Components/ProductCard/ProductCard";
+import { Badge } from "antd";
 
 const NewProducts = () => {
     const [products, setProducts] = useState([]);
@@ -19,7 +20,9 @@ const NewProducts = () => {
             />
             <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 gap-4 mt-12'>
                 {
-                    products.map((product, idx) => <ProductCard key={idx} product={product} />)
+                    products.map((product, idx) => <Badge.Ribbon key={idx} text="New" placement='start' color="volcano">
+                        <ProductCard product={product} />
+                    </Badge.Ribbon>)
                 }
             </div>
         </div>

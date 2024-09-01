@@ -8,7 +8,7 @@ import { IoSearchOutline } from "react-icons/io5";
 const { Header } = Layout;
 
 const navLinks = <>
-    <li className='hover:text-[#00BADB]'><Link>Home</Link></li>
+    <li className='hover:text-[#00BADB]'><Link to='/'>Home</Link></li>
     <Badge size="small" color='#00BADB' className="text-lg hover:text-[#00BADB] cursor-pointer" count={'New'}>
         <li><Link>Shop</Link></li>
     </Badge>
