@@ -4,30 +4,35 @@ import './index.css'
 import { RouterProvider } from 'react-router-dom'
 import router from './Routes/Routes/Routes.jsx'
 import { ConfigProvider } from 'antd'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+
+const queryClient = new QueryClient();
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <ConfigProvider theme={{
-      token: { fontFamily: `'Futura', sans-serif`, colorPrimary: '#00BADB' },
-      components: {
-        FloatButton: {
-          borderRadiusLG: 0,
-          controlHeightLG: 50
-          
-        },
-        Breadcrumb: {
-          linkColor: '#FFFFFF',
-          linkHoverColor: '#F6F6F8',
-          separatorColor: '#FFFFFF',
-          colorBgTextHover: 'none'
-        },
-        Pagination: {
-          // borderRadius: 0,
+    <QueryClientProvider client={queryClient}>
+      <ConfigProvider theme={{
+        token: { fontFamily: `'Futura', sans-serif`, colorPrimary: '#00BADB' },
+        components: {
+          FloatButton: {
+            borderRadiusLG: 0,
+            controlHeightLG: 50
+
+          },
+          Breadcrumb: {
+            linkColor: '#FFFFFF',
+            linkHoverColor: '#F6F6F8',
+            separatorColor: '#FFFFFF',
+            colorBgTextHover: 'none'
+          },
+          Pagination: {
+            // borderRadius: 0,
+          }
         }
-      }
-    }}>
-      <RouterProvider router={router} />
-    </ConfigProvider>
+      }}>
+        <RouterProvider router={router} />
+      </ConfigProvider>
+    </QueryClientProvider>
   </StrictMode>
 )

@@ -1,18 +1,16 @@
 import { useLocation } from 'react-router-dom';
 import BreadCrumb from '../../Components/BreadCrumb/BreadCrumb';
-import { useEffect, useState } from 'react';
 import ProductCard from '../../Components/ProductCard/ProductCard';
 import { Pagination } from 'antd';
+import useProducts from '../../hooks/useProducts';
 
 const Products = () => {
     const location = useLocation();
-    const [products, setProducts] = useState([]);
+    const [products, isProductLoading] = useProducts();
 
-    useEffect(() => {
-        fetch('products.json')
-            .then(res => res.json())
-            .then(data => setProducts(data))
-    }, []);
+    if(isProductLoading){
+        return <h1>Loading...</h1>
+    }
 
     return (
         <div className='mb-16'>
