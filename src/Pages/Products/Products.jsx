@@ -1,14 +1,24 @@
-import { useLocation } from 'react-router-dom';
+import { useLoaderData, useLocation } from 'react-router-dom';
 import BreadCrumb from '../../Components/BreadCrumb/BreadCrumb';
 import ProductCard from '../../Components/ProductCard/ProductCard';
 import { Pagination } from 'antd';
 import useProducts from '../../hooks/useProducts';
+import { useState } from 'react';
 
 const Products = () => {
     const location = useLocation();
-    const [products, isProductLoading] = useProducts();
+    const [itemsPerPage, setItemsPerPage] = useState(10)
+    const [currentPage, setCurrentPage] = useState(1);
+    const { count } = useLoaderData();
+    const [products, isProductLoading] = useProducts({currentPage, itemsPerPage});
 
-    if(isProductLoading){
+    const handlePageAndItemsPerPage = (page, pageSize) => {
+        setCurrentPage(page);
+        setItemsPerPage(pageSize);
+        console.log(page, pageSize);
+    }
+
+    if (isProductLoading) {
         return <h1>Loading...</h1>
     }
 
@@ -22,7 +32,7 @@ const Products = () => {
                     }
                 </div>
             </div>
-            <Pagination defaultCurrent={1} total={100} align='center' />
+            <Pagination onChange={handlePageAndItemsPerPage} total={count} align='center' />
         </div>
     );
 };
