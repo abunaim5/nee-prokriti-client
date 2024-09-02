@@ -4,9 +4,12 @@ import ProductCard from '../../Components/ProductCard/ProductCard';
 import { Pagination, Select } from 'antd';
 import useProducts from '../../hooks/useProducts';
 import { useState } from 'react';
+import { Input } from 'antd';
+import { IoSearchOutline } from 'react-icons/io5';
 
 const Products = () => {
     const location = useLocation();
+    console.log(location.pathname)
     const [itemsPerPage, setItemsPerPage] = useState(10)
     const [currentPage, setCurrentPage] = useState(1);
     const [sortPriceVal, setSortPriceVal] = useState('default');
@@ -30,14 +33,22 @@ const Products = () => {
 
     return (
         <div className='mb-16'>
-            <BreadCrumb location={location} name='Products' />
+            <BreadCrumb location={location} />
             <div className='px-4 xl:px-16 my-16'>
-                <div className='flex justify-end'>
+                <div className='flex gap-4 items-center justify-between'>
+                    <Input
+                        className='rounded-none w-full md:w-1/2 lg:w-1/3 xl:w-1/4'
+                        placeholder="Search products"
+                        size="large"
+                        suffix={<IoSearchOutline />}
+                    // onSearch={onSearch}
+                    />
                     <Select
                         style={{
-                            width: 120,
+                            width: 150,
                             borderRadius: 0
                         }}
+                        size='large'
                         placeholder="Sort by price"
                         optionFilterProp="label"
                         onChange={onChange}
@@ -63,7 +74,7 @@ const Products = () => {
                     }
                 </div>
             </div>
-            <Pagination onChange={handlePageAndItemsPerPage} total={count} align='center' />
+            <Pagination onChange={handlePageAndItemsPerPage} total={count} align='center' responsive={true} />
         </div>
     );
 };

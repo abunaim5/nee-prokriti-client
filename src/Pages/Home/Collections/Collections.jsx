@@ -19,7 +19,7 @@ const Collections = () => {
                             colSpanClass = 'md:col-span-1'
                     }
                     return (
-                        <Link key={idx} className={`relative col-span-6 ${colSpanClass} overflow-hidden group`}>
+                        <Link to={collection.path} key={idx} className={`relative col-span-6 ${colSpanClass} overflow-hidden group`}>
                             <div className='h-[50vh] lg:h-[85vh] bg-no-repeat bg-top bg-cover group-hover:scale-110 transform transition-transform ease-in-out duration-1000' style={{ backgroundImage: `url(${collection.img})` }} />
                                 
                             <Button className='absolute bottom-8 z-10 left-1/2 transform -translate-x-1/2 right-0 rounded-none w-[145px] lg:w-[190px] px-7 lg:px-14 py-5 lg:py-7' size={'large'}>

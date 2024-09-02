@@ -9,26 +9,31 @@ const collections = [
     {
         img: women,
         btnName: 'Women',
+        path: '/products/women',
         colSpan: 2
     },
     {
         img: men,
         btnName: 'Men',
+        path: '/products/men',
         colSpan: 2
     },
     {
         img: kid,
         btnName: 'Kids',
+        path: '/products/kids',
         colSpan: 2
     },
     {
         img: accessories,
         btnName: 'Accessories',
+        path: '/products/accessories',
         colSpan: 3
     },
     {
         img: homeDecor,
-        btnName: 'Home Decor',
+        btnName: 'Decor',
+        path: '/products/decor',
         colSpan: 3
     },
 ];

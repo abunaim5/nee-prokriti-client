@@ -1,16 +1,14 @@
 import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
-import { useEffect, useState } from "react";
 import ProductCard from "../../../Components/ProductCard/ProductCard";
 import { Badge } from "antd";
+import useProducts from "../../../hooks/useProducts";
 
 const NewProducts = () => {
-    const [products, setProducts] = useState([]);
+    const [products, isProductLoading] = useProducts({currentPage: 1, itemsPerPage: 10});
 
-    useEffect(() => {
-        fetch('products.json')
-            .then(res => res.json())
-            .then(data => setProducts(data))
-    }, []);
+    if(isProductLoading){
+        return <h1>Loading...</h1>
+    }
 
     return (
         <div className='mb-10 px-4 xl:px-16 mt-16'>
