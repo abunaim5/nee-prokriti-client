@@ -27,7 +27,14 @@ createRoot(document.getElementById('root')).render(
             colorBgTextHover: 'none'
           },
           Pagination: {
-            // borderRadius: 0,
+            borderRadius: 0,
+            borderRadiusLG: 0,
+            borderRadiusSM: 0
+          },
+          Select: {
+            borderRadius: 0,
+            borderRadiusLG: 0,
+            borderRadiusSM: 0
           }
         }
       }}>
