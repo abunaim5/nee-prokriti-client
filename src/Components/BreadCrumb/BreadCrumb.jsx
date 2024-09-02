@@ -12,7 +12,7 @@ const BreadCrumb = ({ location }) => {
     } else {
         currentRoute = route;
     }
-    console.log(path, route);
+    // console.log(path, route);
 
     return (
         <div style={{ backgroundImage: `url(${man})` }} className='flex flex-col items-center gap-2 justify-center py-16 text-white bg-no-repeat bg-cover bg-center'>

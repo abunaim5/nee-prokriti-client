@@ -9,12 +9,13 @@ import { IoSearchOutline } from 'react-icons/io5';
 
 const Products = () => {
     const location = useLocation();
-    console.log(location.pathname)
+    // console.log(location.pathname)
     const [itemsPerPage, setItemsPerPage] = useState(10)
     const [currentPage, setCurrentPage] = useState(1);
+    const [searchText, setSearchText] = useState('');
     const [sortPriceVal, setSortPriceVal] = useState('default');
     const { count } = useLoaderData();
-    const [products, isProductLoading] = useProducts({ currentPage, itemsPerPage, sortPriceVal });
+    const [products, isProductLoading] = useProducts({ currentPage, itemsPerPage, sortPriceVal, searchText });
 
     // handle pagination
     const handlePageAndItemsPerPage = (page, pageSize) => {
@@ -26,6 +27,12 @@ const Products = () => {
     const onChange = (value) => {
         setSortPriceVal(value);
     };
+
+    const handleSearch = e => {
+        const text = e.target.value;
+        setSearchText(text);
+        // console.log(e.target.value)
+    }
 
     if (isProductLoading) {
         return <h1>Loading...</h1>
@@ -41,6 +48,7 @@ const Products = () => {
                         placeholder="Search products"
                         size="large"
                         suffix={<IoSearchOutline />}
+                        onChange={handleSearch}
                     // onSearch={onSearch}
                     />
                     <Select
