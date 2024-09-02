@@ -1,4 +1,37 @@
+import women from '../assets/women.png'
+import men from '../assets/1.png'
+import kid from '../assets/3.png'
+import accessories from '../assets/accessories.png'
+import homeDecor from '../assets/home-decor.png'
 import { FaFacebookSquare, FaInstagramSquare } from "react-icons/fa";
+
+const collections = [
+    {
+        img: women,
+        btnName: 'Women',
+        colSpan: 2
+    },
+    {
+        img: men,
+        btnName: 'Men',
+        colSpan: 2
+    },
+    {
+        img: kid,
+        btnName: 'Kids',
+        colSpan: 2
+    },
+    {
+        img: accessories,
+        btnName: 'Accessories',
+        colSpan: 3
+    },
+    {
+        img: homeDecor,
+        btnName: 'Home Decor',
+        colSpan: 3
+    },
+];
 
 const footContents = [
     {
@@ -110,4 +143,4 @@ const footContents = [
     },
 ];
 
-export { footContents }
+export { footContents, collections }

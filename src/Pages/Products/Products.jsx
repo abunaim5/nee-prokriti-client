@@ -9,22 +9,24 @@ const Products = () => {
     const location = useLocation();
     const [itemsPerPage, setItemsPerPage] = useState(10)
     const [currentPage, setCurrentPage] = useState(1);
+    const [sortPriceVal, setSortPriceVal] = useState('default');
     const { count } = useLoaderData();
-    const [products, isProductLoading] = useProducts({ currentPage, itemsPerPage });
+    const [products, isProductLoading] = useProducts({ currentPage, itemsPerPage, sortPriceVal });
 
+    // handle pagination
     const handlePageAndItemsPerPage = (page, pageSize) => {
         setCurrentPage(page);
         setItemsPerPage(pageSize);
-        console.log(page, pageSize);
-    }
+    };
 
+    // handle sorting by price
     const onChange = (value) => {
-        console.log(`selected ${value}`);
+        setSortPriceVal(value);
     };
 
     if (isProductLoading) {
         return <h1>Loading...</h1>
-    }
+    };
 
     return (
         <div className='mb-16'>
