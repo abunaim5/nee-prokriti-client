@@ -16,7 +16,7 @@ const router = createBrowserRouter([
       {
         path: '/products/:collection',
         element: <Products />,
-        loader: async ({params}) => await fetch(`http://localhost:5000/productCount?collection=${params.collection}`)
+        loader: async ({params}) => await fetch(`http://localhost:5000/productCount?filter=${params.collection}`)
       }
     ],
   },

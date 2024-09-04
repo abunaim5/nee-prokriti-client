@@ -15,6 +15,7 @@ const Products = () => {
     const [searchText, setSearchText] = useState('');
     const [sortPriceVal, setSortPriceVal] = useState('default');
     const { count } = useLoaderData();
+    // console.log(count);
     const [products, isProductLoading] = useProducts({ currentPage, itemsPerPage, sortPriceVal, searchText, collection });
 
     // handle pagination
