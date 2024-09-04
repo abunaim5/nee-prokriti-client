@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useEffect } from "react";
 import useAxiosPublic from "./useAxiosPublic";
+import { debounce } from "lodash";
 
 const useProducts = ({ currentPage, itemsPerPage, sortPriceVal, searchText, collection }) => {
     const axiosPublic = useAxiosPublic()
@@ -14,7 +15,13 @@ const useProducts = ({ currentPage, itemsPerPage, sortPriceVal, searchText, coll
     });
 
     useEffect(() => {
-        refetch();
+        const debouncedNavigate = debounce(() => {
+            refetch();
+        }, 500);
+        debouncedNavigate();
+        return () => {
+            debouncedNavigate.cancel();
+        };
     }, [refetch, currentPage, itemsPerPage, sortPriceVal, searchText, collection])
 
     return [products, isProductLoading];

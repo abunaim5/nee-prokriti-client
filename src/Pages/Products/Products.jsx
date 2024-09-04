@@ -1,11 +1,12 @@
-import { useLoaderData, useLocation } from 'react-router-dom';
+import { useLoaderData, useLocation, useNavigate } from 'react-router-dom';
 import BreadCrumb from '../../Components/BreadCrumb/BreadCrumb';
 import ProductCard from '../../Components/ProductCard/ProductCard';
 import { Pagination, Select } from 'antd';
 import useProducts from '../../hooks/useProducts';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Input } from 'antd';
 import { IoSearchOutline } from 'react-icons/io5';
+import { debounce } from 'lodash';
 
 const Products = () => {
     const location = useLocation();
@@ -14,8 +15,8 @@ const Products = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [searchText, setSearchText] = useState('');
     const [sortPriceVal, setSortPriceVal] = useState('default');
+    const navigate = useNavigate();
     const { count } = useLoaderData();
-    // console.log(count);
     const [products, isProductLoading] = useProducts({ currentPage, itemsPerPage, sortPriceVal, searchText, collection });
 
     // handle pagination
@@ -32,8 +33,18 @@ const Products = () => {
     const handleSearch = e => {
         const text = e.target.value;
         setSearchText(text);
-        // console.log(e.target.value)
     }
+
+    useEffect(() => {
+        const debouncedNavigate = debounce(() => {
+            const url = searchText ? `/products/${collection}?search=${encodeURIComponent(searchText)}` : `/products/${collection}`
+            navigate(url);
+        }, 500);
+        debouncedNavigate();
+        return () => {
+            debouncedNavigate.cancel();
+        };
+    }, [collection, searchText, navigate])
 
     if (isProductLoading) {
         return <h1>Loading...</h1>
@@ -83,7 +94,7 @@ const Products = () => {
                     }
                 </div>
             </div>
-            <Pagination onChange={handlePageAndItemsPerPage} total={count} align='center' responsive={true} />
+            <Pagination className={count === 0 && 'hidden'} onChange={handlePageAndItemsPerPage} total={count} align='center' responsive={true} />
         </div>
     );
 };
