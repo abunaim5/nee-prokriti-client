@@ -1,13 +1,15 @@
 import { FiShoppingCart, FiUser } from "react-icons/fi";
 import { IoMdHeartEmpty } from "react-icons/io";
-import { Layout, Badge, Input, Empty } from "antd";
+import { Layout, Badge, Input, Empty, Card, Image } from "antd";
 import { Link } from "react-router-dom";
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
 import { IoSearchOutline } from "react-icons/io5";
-import { useState } from "react";
 import SideDrawer from "../../../Components/SideDrawer/SideDrawer";
+import useSearchProducts from "../../../hooks/useSearchProducts";
+import { useState } from "react";
 
 const { Header } = Layout;
+const { Meta } = Card;
 
 const navLinks = <>
     <li className='hover:text-[#00BADB]'><Link to='/'>Home</Link></li>
@@ -25,6 +27,8 @@ const navLinks = <>
 const Navbar = () => {
     const [open, setOpen] = useState(false);
     const [searchText, setSearchText] = useState('');
+    const [products, isProductLoading] = useSearchProducts({ searchText })
+    console.log(products);
 
     const handleSearchDrawer = () => {
         setOpen(true)
@@ -45,8 +49,28 @@ const Navbar = () => {
         />
         <h1 className='mt-5 shadow-md text-base p-3'>Search results</h1>
         <div>
-            <div className='flex items-center justify-center h-96'>
+            <div className={`flex items-center justify-center h-96 ${products?.length ? 'hidden' : ''}`}>
                 <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />
+            </div>
+            <div className='mt-6'>
+                {
+                    products?.map(product => <Card
+                        key={product._id}
+                        bordered={false}
+                        className='flex gap-3 rounded-none'
+                        styles={{
+                            body: { padding: 0 }
+                        }}
+                        cover={
+                            <Image preview={false} alt={`${product.name} image`} className='bg-gray-50 max-w-28' src={product.image} />
+                        }
+                    >
+                        <Meta
+                            title={product.name}
+                        />
+                        <p className='mt-2'>&#2547;{product.price}</p>
+                    </Card>)
+                }
             </div>
         </div>
     </>

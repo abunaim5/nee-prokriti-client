@@ -11,7 +11,7 @@ const ProductCard = ({ product }) => {
                 body: { padding: 0 }
             }}
             cover={<div className='overflow-hidden border-[1px]' style={{ borderRadius: 0 }}>
-                <Image preview={false} alt="example" className='hover:scale-110 transform transition-transform ease-in-out duration-1000' src={image} />
+                <Image preview={false} alt={`${name} image`} className='hover:scale-110 transform transition-transform ease-in-out duration-1000' src={image} />
             </div>}
         >
             <div className='flex items-center justify-between border-[1px] p-3 mt-4'>
