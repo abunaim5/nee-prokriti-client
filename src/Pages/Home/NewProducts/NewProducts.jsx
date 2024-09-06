@@ -4,7 +4,8 @@ import { Badge } from "antd";
 import useProducts from "../../../hooks/useProducts";
 
 const NewProducts = () => {
-    const [products, isProductLoading] = useProducts({currentPage: 1, itemsPerPage: 10, collection: 'all'});
+    const [products, isProductLoading] = useProducts({currentPage: 1, itemsPerPage: 10, collection: 'all', searchText: ''});
+    // console.log(products)
 
     if(isProductLoading){
         return <h1>Loading...</h1>

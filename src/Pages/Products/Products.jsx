@@ -4,7 +4,7 @@ import ProductCard from '../../Components/ProductCard/ProductCard';
 import { Pagination, Select } from 'antd';
 import useProducts from '../../hooks/useProducts';
 import { useEffect, useState } from 'react';
-import { Input } from 'antd';
+import { Input, Empty } from 'antd';
 import { IoSearchOutline } from 'react-icons/io5';
 import { debounce } from 'lodash';
 
@@ -61,7 +61,6 @@ const Products = () => {
                         size="large"
                         suffix={<IoSearchOutline />}
                         onChange={handleSearch}
-                    // onSearch={onSearch}
                     />
                     <Select
                         style={{
@@ -88,13 +87,16 @@ const Products = () => {
                         ]}
                     />
                 </div>
-                <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 gap-4 mt-12'>
+                <div className={`mt-12 ${count && 'hidden'}`}>
+                    <Empty />
+                </div>
+                <div className={`grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 gap-4 mt-12 ${!count && 'hidden'}`}>
                     {
                         products.map((product, idx) => <ProductCard key={idx} product={product} />)
                     }
                 </div>
             </div>
-            <Pagination className={count === 0 && 'hidden'} onChange={handlePageAndItemsPerPage} total={count} align='center' responsive={true} />
+            <Pagination className={!count && 'hidden'} onChange={handlePageAndItemsPerPage} total={count} align='center' responsive={true} />
         </div>
     );
 };

@@ -35,6 +35,9 @@ createRoot(document.getElementById('root')).render(
             borderRadius: 0,
             borderRadiusLG: 0,
             borderRadiusSM: 0
+          },
+          Drawer: {
+            
           }
         }
       }}>
