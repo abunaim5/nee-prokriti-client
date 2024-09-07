@@ -36,8 +36,8 @@ createRoot(document.getElementById('root')).render(
             borderRadiusLG: 0,
             borderRadiusSM: 0
           },
-          Drawer: {
-            
+          Checkbox: {
+            borderRadiusSM: 0
           }
         }
       }}>

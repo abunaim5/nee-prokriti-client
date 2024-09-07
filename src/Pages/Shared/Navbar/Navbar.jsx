@@ -20,8 +20,7 @@ const navLinks = <>
     <Badge size="small" color='#FFA800' className="text-lg hover:text-[#00BADB] cursor-pointer" count={'Sale'}>
         <li><Link>Sale</Link></li>
     </Badge>
-    <li className='hover:text-[#00BADB]'><Link>Pages</Link></li>
-    <li className='hover:text-[#00BADB]'><Link>Blog</Link></li>
+    <li className='hover:text-[#00BADB]'><Link>Support</Link></li>
 </>
 
 const Navbar = () => {
@@ -62,7 +61,7 @@ const Navbar = () => {
 
     return (
         <Header className="bg-transparent h-fit py-6 px-4 lg:px-8 xl:px-16">
-            <SideDrawer open={open} setOpen={setOpen} title='Search Products' drawerElem={searchDrawerElem} />
+            <SideDrawer title='Search Products' place='right' open={open} setOpen={setOpen} drawerElem={searchDrawerElem} />
             <div className="flex items-center">
                 <div className='flex items-center gap-2 flex-1'>
                     <HiOutlineMenuAlt1 className='block lg:hidden text-3xl' />

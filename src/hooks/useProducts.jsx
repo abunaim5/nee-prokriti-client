@@ -3,13 +3,13 @@ import { useEffect } from "react";
 import useAxiosPublic from "./useAxiosPublic";
 import { debounce } from "lodash";
 
-const useProducts = ({ currentPage, itemsPerPage, sortPriceVal, searchText, collection }) => {
+const useProducts = ({ currentPage, itemsPerPage, sortPriceVal, collection }) => {
     const axiosPublic = useAxiosPublic()
 
     const { data: products = [], isPending: isProductLoading, refetch } = useQuery({
         queryKey: ['products'],
         queryFn: async () => {
-            const res = await axiosPublic.get(`/products?page=${currentPage}&size=${itemsPerPage}&search=${searchText}&filter=${collection}&sort=${sortPriceVal}`);
+            const res = await axiosPublic.get(`/products?page=${currentPage}&size=${itemsPerPage}&filter=${collection}&sort=${sortPriceVal}`);
             return res.data;
         }
     });
@@ -22,7 +22,7 @@ const useProducts = ({ currentPage, itemsPerPage, sortPriceVal, searchText, coll
         return () => {
             debouncedNavigate.cancel();
         };
-    }, [refetch, currentPage, itemsPerPage, sortPriceVal, searchText, collection])
+    }, [refetch, currentPage, itemsPerPage, sortPriceVal, collection])
 
     return [products, isProductLoading];
 };

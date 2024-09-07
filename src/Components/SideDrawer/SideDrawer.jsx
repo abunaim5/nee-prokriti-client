@@ -1,13 +1,13 @@
 import { Drawer } from 'antd';
 
-const SideDrawer = ({ title, open, setOpen, drawerElem }) => {
+const SideDrawer = ({ title, place, open, setOpen, drawerElem }) => {
 
   const onClose = () => {
     setOpen(false);
   };
 
   return (
-    <Drawer title={title} onClose={onClose} open={open}>
+    <Drawer title={title} placement={place} onClose={onClose} open={open}>
       {drawerElem}
     </Drawer>
   );
