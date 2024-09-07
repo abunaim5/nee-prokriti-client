@@ -44,6 +44,11 @@ const Products = () => {
         setItemsPerPage(pageSize);
     };
 
+    const handleFilterCategory = checkedValues => {
+
+        console.log(checkedValues);
+    }
+
     // handle sorting by price
     const onChange = (value) => {
         setSortPriceVal(value);
@@ -72,9 +77,11 @@ const Products = () => {
     const filterDrawerElem = <>
         <h1 className='shadow-md text-base font-bold p-3'>Categories</h1>
         <div className='flex flex-col gap-3 mt-5'>
-            {
-                categories.map((category, idx) => <Checkbox className='text-base' key={idx} onChange={''}>{category.category.charAt(0).toUpperCase() + category.category.slice(1)} ({category.totalProducts})</Checkbox>)
-            }
+            <Checkbox.Group className='gap-3 flex-col' options={categories.map(category => ({
+                label: `${category.category.charAt(0).toUpperCase() + category.category.slice(1)} (${category.totalProducts})`,
+                value: category.category,
+                name: category.category
+            }))} onChange={handleFilterCategory} />
         </div>
     </>
 

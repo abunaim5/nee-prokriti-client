@@ -37,6 +37,7 @@ createRoot(document.getElementById('root')).render(
             borderRadiusSM: 0
           },
           Checkbox: {
+            fontSize: 17,
             borderRadiusSM: 0
           }
         }

@@ -27,7 +27,6 @@ const Navbar = () => {
     const [open, setOpen] = useState(false);
     const [searchText, setSearchText] = useState('');
     const [products, isProductLoading] = useSearchProducts({ searchText })
-    console.log(products);
 
     const handleSearchDrawer = () => {
         setOpen(true)
@@ -40,6 +39,7 @@ const Navbar = () => {
 
     const searchDrawerElem = <>
         <Input
+            name='search'
             className='rounded-none w-full'
             placeholder="Search"
             size="large"
