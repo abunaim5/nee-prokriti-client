@@ -28,7 +28,7 @@ const Products = () => {
     const { data: categories = [], isPending: isCategoriesLoading } = useQuery({
         queryKey: ['categories'],
         queryFn: async () => {
-            const res = await axiosPublic.get('/categories');
+            const res = await axiosPublic.get(`/categories?collection=${collection}`);
             return res.data;
         }
     });
