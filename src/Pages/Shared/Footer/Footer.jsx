@@ -21,7 +21,7 @@ const Footer = () => {
                 }
             </div>
             <div className='flex items-center justify-between flex-col lg:flex-row gap-2 px-4 xl:px-16 py-4 bg-white'>
-                <p className='text-center'>All Rights Reserved &copy; {currentYear} Neeprokriti - Developed by <a href='https://www.linkedin.com/in/abunaim7' target='_blank' className='underline'>Abu Naim</a></p>
+                <p className='text-center'>All Rights Reserved &copy; {currentYear} Neeprokriti - Developed by <a href='https://hello-abu-naim.web.app' target='_blank' className='underline'>Abu Naim</a></p>
                 <div className='flex items-center gap-5'>
                     <Link>Shop</Link>
                     <Link>About Us</Link>
