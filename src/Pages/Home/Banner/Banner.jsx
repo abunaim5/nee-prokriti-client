@@ -1,4 +1,5 @@
 import banner1 from '../../../assets/banner2.png'
+import banner2 from '../../../assets/man.png'
 import { Button } from 'antd';
 import Flicking, { ViewportSlot } from "@egjs/react-flicking";
 import { AutoPlay, Pagination } from "@egjs/flicking-plugins";
@@ -13,9 +14,9 @@ const banners = [
         img: banner1
     },
     {
-        title: 'Fashion For Her',
+        title: 'Fashion For Him',
         subtitle: 'New Arrival',
-        img: banner1
+        img: banner2
     },
 ];
 
