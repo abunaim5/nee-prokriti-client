@@ -1,7 +1,7 @@
 import { FiShoppingCart, FiUser } from "react-icons/fi";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { Layout, Badge, Input, Empty } from "antd";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
 import { IoSearchOutline } from "react-icons/io5";
 import SideDrawer from "../../../Components/SideDrawer/SideDrawer";
@@ -11,16 +11,18 @@ import DrawerCard from "../../../Components/DrawerCard/DrawerCard";
 
 const { Header } = Layout;
 
+const activeCls = ({ isActive }) => (isActive ? 'active-link' : '');
+
 const navLinks = <>
-    <li className='hover:text-[#00BADB]'><Link to='/'>Home</Link></li>
+    <li className='hover:text-[#00BADB]'><NavLink to='/' className={activeCls}>Home</NavLink></li>
     <Badge size="small" color='#00BADB' className="text-lg hover:text-[#00BADB] cursor-pointer" count={'New'}>
-        <li><Link>Shop</Link></li>
+        <li><NavLink to='/shop' className={activeCls}>Shop</NavLink></li>
     </Badge>
-    <li className='hover:text-[#00BADB]'><Link to='/products/all'>Products</Link></li>
+    <li className='hover:text-[#00BADB]'><NavLink to='/products/all' className={activeCls}>Products</NavLink></li>
     <Badge size="small" color='#FFA800' className="text-lg hover:text-[#00BADB] cursor-pointer" count={'Sale'}>
-        <li><Link>Sale</Link></li>
+        <li><NavLink to='/sale' className={activeCls}>Sale</NavLink></li>
     </Badge>
-    <li className='hover:text-[#00BADB]'><Link>Support</Link></li>
+    <li className='hover:text-[#00BADB]'><NavLink to='/support' className={activeCls}>Support</NavLink></li>
 </>
 
 const Navbar = () => {

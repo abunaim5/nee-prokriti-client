@@ -7,6 +7,11 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
+body {
     font-family: 'Futura';
+}
+
+.active-link {
+    color: #00BADB;
+    /* font-weight: 600; */
 }

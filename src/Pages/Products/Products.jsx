@@ -35,7 +35,7 @@ const Products = () => {
 
     // console.log(categories);
     const handleFilterDrawer = () => {
-        setOpen(true)
+        setOpen(true);
     }
 
     // handle pagination
