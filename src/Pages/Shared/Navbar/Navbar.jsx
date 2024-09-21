@@ -14,21 +14,21 @@ const { Header } = Layout;
 const activeCls = ({ isActive }) => (isActive ? 'active-link' : '');
 
 const navLinks = <>
-    <li className='hover:text-[#00BADB]'><NavLink to='/' className={activeCls}>Home</NavLink></li>
-    <Badge size="small" color='#00BADB' className="text-lg hover:text-[#00BADB] cursor-pointer" count={'New'}>
+    <li className='hover:text-primary'><NavLink to='/' className={activeCls}>Home</NavLink></li>
+    <Badge size="small" color='#00BADB' className="text-lg hover:text-primary cursor-pointer" count={'New'}>
         <li><NavLink to='/shop' className={activeCls}>Shop</NavLink></li>
     </Badge>
-    <li className='hover:text-[#00BADB]'><NavLink to='/products/all' className={activeCls}>Products</NavLink></li>
-    <Badge size="small" color='#FFA800' className="text-lg hover:text-[#00BADB] cursor-pointer" count={'Sale'}>
+    <li className='hover:text-primary'><NavLink to='/products/all' className={activeCls}>Products</NavLink></li>
+    <Badge size="small" color='#FFA800' className="text-lg hover:text-primary cursor-pointer" count={'Sale'}>
         <li><NavLink to='/sale' className={activeCls}>Sale</NavLink></li>
     </Badge>
-    <li className='hover:text-[#00BADB]'><NavLink to='/support' className={activeCls}>Support</NavLink></li>
+    <li className='hover:text-primary'><NavLink to='/support' className={activeCls}>Support</NavLink></li>
 </>
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
     const [searchText, setSearchText] = useState('');
-    const [products, isProductLoading] = useSearchProducts({ searchText })
+    const [products, isProductLoading] = useSearchProducts({ searchText });
 
     const handleSearchDrawer = () => {
         setOpen(true)
@@ -77,12 +77,12 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="flex items-center justify-end gap-4 text-2xl flex-1">
-                    <IoSearchOutline onClick={handleSearchDrawer} className="hover:text-[#00BADB] cursor-pointer" />
-                    <FiUser className="hidden md:block hover:text-[#00BADB] cursor-pointer" />
-                    <Badge size="small" className="hidden md:block text-2xl hover:text-[#00BADB] cursor-pointer" count={1}>
+                    <IoSearchOutline onClick={handleSearchDrawer} className="hover:text-primary cursor-pointer" />
+                    <FiUser className="hidden md:block hover:text-primary cursor-pointer" />
+                    <Badge size="small" className="hidden md:block text-2xl hover:text-primary cursor-pointer" count={0}>
                         <IoMdHeartEmpty />
                     </Badge>
-                    <Badge size="small" className="text-2xl hover:text-[#00BADB] cursor-pointer" count={7}>
+                    <Badge size="small" className="text-2xl hover:text-primary cursor-pointer" count={0}>
                         <FiShoppingCart />
                     </Badge>
                 </div>
