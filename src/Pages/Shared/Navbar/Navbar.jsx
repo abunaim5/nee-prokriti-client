@@ -1,7 +1,7 @@
 import { FiShoppingCart, FiUser } from "react-icons/fi";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { Layout, Badge, Input, Empty } from "antd";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
 import { IoSearchOutline } from "react-icons/io5";
 import SideDrawer from "../../../Components/SideDrawer/SideDrawer";
@@ -23,6 +23,7 @@ const navLinks = <>
         <li><NavLink to='/sale' className={activeCls}>Sale</NavLink></li>
     </Badge>
     <li className='hover:text-primary'><NavLink to='/support' className={activeCls}>Support</NavLink></li>
+    <li className='hover:text-primary'><NavLink to='/dashboard' className={activeCls}>Dashboard</NavLink></li>
 </>
 
 const Navbar = () => {
@@ -37,7 +38,7 @@ const Navbar = () => {
     const handleSearch = e => {
         const text = e.target.value;
         setSearchText(text);
-    }
+    };
 
     const searchDrawerElem = <>
         <Input
@@ -67,7 +68,7 @@ const Navbar = () => {
             <div className="flex items-center">
                 <div className='flex items-center gap-2 flex-1'>
                     <HiOutlineMenuAlt1 className='block lg:hidden text-3xl' />
-                    <div className="logo flex-1 text-2xl md:text-4xl font-extrabold">
+                    <div className="logo flex-1 text-2xl md:text-3xl font-extrabold">
                         NEEPROKRITI
                     </div>
                 </div>
@@ -78,7 +79,7 @@ const Navbar = () => {
                 </div>
                 <div className="flex items-center justify-end gap-4 text-2xl flex-1">
                     <IoSearchOutline onClick={handleSearchDrawer} className="hover:text-primary cursor-pointer" />
-                    <FiUser className="hidden md:block hover:text-primary cursor-pointer" />
+                    <Link to='/login'><FiUser className="hidden md:block hover:text-primary cursor-pointer" /></Link>
                     <Badge size="small" className="hidden md:block text-2xl hover:text-primary cursor-pointer" count={0}>
                         <IoMdHeartEmpty />
                     </Badge>

@@ -5,7 +5,13 @@ import man from '../../assets/man.png'
 const BreadCrumb = ({ location }) => {
     const { pathname } = location;
     const path = pathname.split('/');
-    const route = path[2].charAt(0).toUpperCase() + path[2].slice(1);
+    let route = ''
+    if (pathname === '/login') {
+        route = path[1].charAt(0).toUpperCase() + path[1].slice(1);
+    } else {
+        route = path[2].charAt(0).toUpperCase() + path[2].slice(1);
+    }
+    // const route = path[2].charAt(0).toUpperCase() + path[2].slice(1);
     let currentRoute = ''
     if (route === 'All') {
         currentRoute = 'Products'

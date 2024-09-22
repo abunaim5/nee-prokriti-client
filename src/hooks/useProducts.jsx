@@ -22,7 +22,7 @@ const useProducts = ({ currentPage, itemsPerPage, sortPriceVal, collection }) =>
         return () => {
             debouncedNavigate.cancel();
         };
-    }, [refetch, currentPage, itemsPerPage, sortPriceVal, collection])
+    }, [refetch, currentPage, itemsPerPage, sortPriceVal, collection]);
 
     return [products, isProductLoading];
 };
