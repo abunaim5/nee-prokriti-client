@@ -1,20 +1,19 @@
-import { Button, Checkbox, Divider, Flex, Form, Input } from 'antd';
-import { Link, useLocation } from 'react-router-dom';
-import BreadCrumb from '../../Components/BreadCrumb/BreadCrumb';
-import { FcGoogle } from 'react-icons/fc';
+import { Link, useLocation } from "react-router-dom";
+import BreadCrumb from "../../Components/BreadCrumb/BreadCrumb";
+import { Button, Checkbox, Form, Input } from 'antd';
 
-const onFinish = (values) => {
-    console.log('Success:', values);
-};
-const onFinishFailed = (errorInfo) => {
-    console.log('Failed:', errorInfo);
-};
-
-const Login = () => {
+const Register = () => {
     const location = useLocation();
 
+    const onFinish = (values) => {
+        console.log('Success:', values);
+    };
+    const onFinishFailed = (errorInfo) => {
+        console.log('Failed:', errorInfo);
+    };
+
     return (
-        <>
+        <div>
             <BreadCrumb location={location} />
             <div className='h-[calc(100vh-272px)] flex items-center py-6'>
                 <Form
@@ -39,6 +38,30 @@ const Login = () => {
                 >
                     <Form.Item
                         layout="vertical"
+                        label="Full Name"
+                        name="name"
+                        rules={[
+                            {
+                                required: true,
+                                message: 'Please input your name!',
+                            },
+                        ]}
+                        labelCol={{
+                            span: 24,
+                        }}
+                        wrapperCol={{
+                            span: 24,
+                        }}
+                    >
+                        <Input
+                            className='rounded-none w-full'
+                            type='text'
+                            placeholder="Name"
+                            size="large"
+                        />
+                    </Form.Item>
+                    <Form.Item
+                        layout="vertical"
                         label="Email"
                         name="email"
                         rules={[
@@ -56,6 +79,7 @@ const Login = () => {
                     >
                         <Input
                             className='rounded-none w-full'
+                            type='email'
                             placeholder="Email"
                             size="large"
                         />
@@ -80,22 +104,28 @@ const Login = () => {
                     >
                         <Input.Password
                             className='rounded-none w-full'
+                            type='password'
                             placeholder="Password"
                             size="large"
                         />
                     </Form.Item>
 
                     <Form.Item
+                        name="agreement"
+                        valuePropName="checked"
+                        rules={[
+                            {
+                                validator: (_, value) =>
+                                    value ? Promise.resolve() : Promise.reject(new Error('Should accept agreement')),
+                            },
+                        ]}
                         wrapperCol={{
                             span: 24,
                         }}
                     >
-                        <Flex justify="space-between" align="center">
-                            <Form.Item name="remember" valuePropName="checked" noStyle>
-                                <Checkbox>Remember me</Checkbox>
-                            </Form.Item>
-                            <a href="">Forgot password?</a>
-                        </Flex>
+                        <Checkbox>
+                            I have read the <a href="">agreement</a>
+                        </Checkbox>
                     </Form.Item>
 
                     <Form.Item
@@ -104,18 +134,14 @@ const Login = () => {
                         }}
                     >
                         <Button type="primary" htmlType="submit" size='large' className='w-full rounded-none'>
-                            Sign In
+                            Sign Up
                         </Button>
-                        <Divider plain>Login with social account</Divider>
-                        <Button type="primary" ghost size='large' className='w-full rounded-none text-2xl'>
-                            <FcGoogle />
-                        </Button>
-                        <h5 className='mt-3 text-center'>New Customer? <Link to='/register' className='text-primary'>Create Account</Link></h5>
+                        <h5 className='mt-3 text-center'>Already have an account? <Link to='/login' className='text-primary'>Login</Link></h5>
                     </Form.Item>
                 </Form>
             </div>
-        </>
+        </div>
     );
 };
 
-export default Login;
+export default Register;

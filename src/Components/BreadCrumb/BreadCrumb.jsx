@@ -6,7 +6,7 @@ const BreadCrumb = ({ location }) => {
     const { pathname } = location;
     const path = pathname.split('/');
     let route = ''
-    if (pathname === '/login') {
+    if (pathname === '/login' || pathname === '/register') {
         route = path[1].charAt(0).toUpperCase() + path[1].slice(1);
     } else {
         route = path[2].charAt(0).toUpperCase() + path[2].slice(1);
