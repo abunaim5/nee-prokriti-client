@@ -16,7 +16,7 @@ const Login = () => {
     return (
         <>
             <BreadCrumb location={location} />
-            <div className='h-[calc(100vh-272px)] flex items-center py-6'>
+            <div className='min-h-[calc(100vh-272px)] flex items-center py-10'>
                 <Form
                     className='mx-auto w-full md:w-[420px] px-4 md:px-0'
                     name="basic"
@@ -110,7 +110,7 @@ const Login = () => {
                         <Button type="primary" ghost size='large' className='w-full rounded-none text-2xl'>
                             <FcGoogle />
                         </Button>
-                        <h5 className='mt-3 text-center'>New Customer? <Link to='/register' className='text-primary'>Create Account</Link></h5>
+                        <h5 className='mt-4 text-center'>New Customer? <Link to='/register' className='text-primary'>Register</Link></h5>
                     </Form.Item>
                 </Form>
             </div>

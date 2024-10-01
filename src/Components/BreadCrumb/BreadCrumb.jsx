@@ -21,7 +21,7 @@ const BreadCrumb = ({ location }) => {
     // console.log(path, route);
 
     return (
-        <div style={{ backgroundImage: `url(${man})` }} className='flex flex-col items-center gap-2 justify-center py-16 text-white bg-no-repeat bg-cover bg-center'>
+        <div style={{ backgroundImage: `url(${man})` }} className='flex flex-col items-center gap-2 justify-center py-8 2xl:py-16 text-white bg-no-repeat bg-cover bg-center'>
             <h1 className='text-xl font-semibold'>{currentRoute}</h1>
             <Breadcrumb
                 className='font-bold text-base'
