@@ -2,6 +2,7 @@ import { Button, Checkbox, Divider, Flex, Form, Input } from 'antd';
 import { Link, useLocation } from 'react-router-dom';
 import BreadCrumb from '../../Components/BreadCrumb/BreadCrumb';
 import { FcGoogle } from 'react-icons/fc';
+import { Controller, useForm } from 'react-hook-form';
 
 const onFinish = (values) => {
     console.log('Success:', values);
@@ -12,6 +13,7 @@ const onFinishFailed = (errorInfo) => {
 
 const Login = () => {
     const location = useLocation();
+    const { control, handleSubmit, formState: { errors } } = useForm();
 
     return (
         <>
@@ -19,90 +21,89 @@ const Login = () => {
             <div className='min-h-[calc(100vh-272px)] flex items-center py-10'>
                 <Form
                     className='mx-auto w-full md:w-[420px] px-4 md:px-0'
-                    name="basic"
                     layout='vertical'
-                    labelCol={{
-                        span: 4,
-                    }}
-                    wrapperCol={{
-                        span: 20,
-                    }}
-                    style={{
-                        // maxWidth: 400,
-                    }}
                     initialValues={{
                         remember: true,
                     }}
-                    onFinish={onFinish}
+                    onFinish={handleSubmit(onFinish)}
                     onFinishFailed={onFinishFailed}
                     autoComplete="off"
                 >
                     <Form.Item
-                        layout="vertical"
                         label="Email"
-                        name="email"
-                        rules={[
-                            {
-                                required: true,
-                                message: 'Please input your email!',
-                            },
-                        ]}
-                        labelCol={{
-                            span: 24,
-                        }}
-                        wrapperCol={{
-                            span: 24,
-                        }}
+                        validateStatus={errors.email ? 'error' : ''}
+                        help={errors.email?.message}
                     >
-                        <Input
-                            className='rounded-none w-full'
-                            placeholder="Email"
-                            size="large"
+                        <Controller
+                            name='email'
+                            control={control}
+                            rules={{
+                                required: 'Please input your email!',
+                                pattern: {
+                                    value: /^\S+@\S+$/i,
+                                    message: 'Invalid email format.'
+                                }
+                            }}
+                            render={({ field }) => (
+                                <Input
+                                    {...field}
+                                    className='rounded-none w-full'
+                                    type='email'
+                                    placeholder="Email"
+                                    size="large"
+                                />
+                            )}
                         />
                     </Form.Item>
 
                     <Form.Item
-                        layout="vertical"
                         label="Password"
-                        name="password"
-                        rules={[
-                            {
-                                required: true,
-                                message: 'Please input your password!',
-                            },
-                        ]}
-                        labelCol={{
-                            span: 24,
-                        }}
-                        wrapperCol={{
-                            span: 24,
-                        }}
+                        validateStatus={errors.password ? 'error' : ''}
+                        help={errors.password?.message}
                     >
-                        <Input.Password
-                            className='rounded-none w-full'
-                            placeholder="Password"
-                            size="large"
+                        <Controller
+                            name='password'
+                            control={control}
+                            rules={{
+                                required: 'Please input your password!',
+                                minLength: {
+                                    value: 6,
+                                    message: 'Password must be at least 6 characters long.'
+                                }
+                            }}
+                            render={({ field }) => (
+                                <Input.Password
+                                    {...field}
+                                    className='rounded-none w-full'
+                                    type='password'
+                                    placeholder="Password"
+                                    size="large"
+                                />
+                            )}
                         />
                     </Form.Item>
 
-                    <Form.Item
-                        wrapperCol={{
-                            span: 24,
-                        }}
-                    >
+                    <Form.Item>
                         <Flex justify="space-between" align="center">
-                            <Form.Item name="remember" valuePropName="checked" noStyle>
-                                <Checkbox>Remember me</Checkbox>
+                            <Form.Item noStyle>
+                                <Controller
+                                    name='remember'
+                                    control={control}
+                                    render={({ field }) => (
+                                        <Checkbox
+                                            checked={field.value}
+                                            onChange={(e) => field.onChange(e.target.checked)}
+                                        >
+                                            Remember me.
+                                        </Checkbox>
+                                    )}
+                                />
                             </Form.Item>
                             <a href="">Forgot password?</a>
                         </Flex>
                     </Form.Item>
 
-                    <Form.Item
-                        wrapperCol={{
-                            span: 24,
-                        }}
-                    >
+                    <Form.Item>
                         <Button type="primary" htmlType="submit" size='large' className='w-full rounded-none'>
                             Sign In
                         </Button>
