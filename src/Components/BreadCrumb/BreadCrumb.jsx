@@ -22,9 +22,9 @@ const BreadCrumb = ({ location }) => {
 
     return (
         <div style={{ backgroundImage: `url(${man})` }} className='flex flex-col items-center gap-2 justify-center py-8 2xl:py-16 text-white bg-no-repeat bg-cover bg-center'>
-            <h1 className='text-xl font-semibold'>{currentRoute}</h1>
+            <h1 className='text-xl'>{currentRoute}</h1>
             <Breadcrumb
-                className='font-bold text-base'
+                className='text-base'
                 items={[
                     {
                         title: <Link to='/'>Home</Link>
