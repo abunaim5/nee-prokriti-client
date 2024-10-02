@@ -68,14 +68,14 @@ const SupportInfo = () => {
             >
                 {
                     supports.map((support, idx) => <SwiperSlide key={idx}>
-                        <div className='font-medium text-center'>
+                        <div className='text-center'>
                             <Image
                                 className='object-contain'
                                 preview={false}
                                 width={55}
                                 src={support.img}
                             />
-                            <h1 className='text-lg lg:text-xl font-extrabold mt-2'>{support.title}</h1>
+                            <h1 className='text-lg font-semibold mt-2'>{support.title}</h1>
                             <h5 className='text-base lg:text-lg mt-1'>{support.description}</h5>
                         </div>
                     </SwiperSlide>)
